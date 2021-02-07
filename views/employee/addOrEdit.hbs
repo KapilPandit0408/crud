@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+<script src="https://use.fontawesome.com/8ab3da7a47.js"></script>
+
+
+
+
+
+<div style="background-color: rgb(117, 223, 117);">
+    <form action="/employee" method="POST" class="container" autocomplete="off">
+        <input type="hidden" name="_id" value="{{employee._id}}">
+        <h3> {{viewTitle}} </h3>
+        <div class="form-group">
+            <label for=""> Full Name</label>
+            <input type="text" class="form-control" name="fullname" placeholder="Enter your Full Name Here.."
+                value="{{employee.fullname}}" required="true">
+            <div class="text-danger">
+                {{employee.fullNameError}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="Enter your  Email Here.."
+                value="{{employee.email}}" required="true">
+            <div class="text-danger">
+                {{employee.emailError}}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="">Mobile</label>
+                <input type="text" class="form-control" name="mobile" placeholder=" Enter your Mobile Here.. "
+                    value="{{employee.mobile}}" title="Enter Correct Mobile Number" pattern="[1-9]{1}[0-9]{9}"
+                    required="true">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="">City</label>
+                <input type="text" class="form-control" name="city" placeholder=" Enter your City Here.."
+                    value="{{employee.city}}" required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">
+                <i class="fa fa-database" aria-hidden="true">&nbsp;</i>Submit
+            </button>
+            <a class="btn btn-secondary" href="/employee/list"> <i class="fa fa-list-alt"></i> View All </a>
+        </div>
+    </form>
+</div>
